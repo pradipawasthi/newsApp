@@ -88,15 +88,9 @@ fun addPlaylist(rvSource: RecyclerView, articlesData: List<ArticleDto>?) {
             intent.putExtra(Constants.NEWS_LINK, adapter.articles[position].url)
 
             context.startActivity(intent)
-
-//            Toast.makeText(view.context, "item click", Toast.LENGTH_LONG).show()
-//            addFragment(WebViewFragment.newInstance(adapter.articles[position].title, adapter.articles[position].url))
-
         }
 
-//        private fun addFragment(fragment: WebViewFragment) {
-//            (context as AppCompatActivity).supportFragmentManager.beginTransaction().add(android.R.id.content, fragment).commit()
-//        }
+
     })
 
 

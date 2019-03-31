@@ -25,7 +25,6 @@ class WebViewActivity : AppCompatActivity() {
     private var title: String = ""
 
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_web_view)
@@ -40,7 +39,7 @@ class WebViewActivity : AppCompatActivity() {
         title = intent.getStringExtra(Constants.NEWS_TITLE) ?: ""
     }
 
-    private fun loadWebView(){
+    private fun loadWebView() {
 
         webViewNews.loadWithUrl(url)
 
