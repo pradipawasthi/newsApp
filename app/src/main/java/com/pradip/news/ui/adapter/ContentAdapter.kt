@@ -1,19 +1,20 @@
 package com.pradip.news.ui.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
-import android.widget.Toast
 import androidx.databinding.BindingAdapter
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dfl.newsapi.model.ArticleDto
+import com.pradip.news.Constants
 import com.pradip.news.R
 import com.pradip.news.Utils.RecyclerItemClickListener
 import com.pradip.news.databinding.ItemGroupContentBinding
 import com.pradip.news.extensions.addOnItemClick
+import com.pradip.news.ui.activity.WebViewActivity
 
 /**
  * @author pradip; dated 31/03/19.
@@ -81,17 +82,26 @@ fun addPlaylist(rvSource: RecyclerView, articlesData: List<ArticleDto>?) {
 
     rvSource.addOnItemClick(object : RecyclerItemClickListener.OnClickListener {
         override fun onItemClick(position: Int, view: View) {
-            Toast.makeText(view.context, "item click", Toast.LENGTH_LONG).show()
+
+            val intent = Intent(context, WebViewActivity::class.java)
+            intent.putExtra(Constants.NEWS_TITLE, adapter.articles[position].title)
+            intent.putExtra(Constants.NEWS_LINK, adapter.articles[position].url)
+
+            context.startActivity(intent)
+
+//            Toast.makeText(view.context, "item click", Toast.LENGTH_LONG).show()
+//            addFragment(WebViewFragment.newInstance(adapter.articles[position].title, adapter.articles[position].url))
+
         }
+
+//        private fun addFragment(fragment: WebViewFragment) {
+//            (context as AppCompatActivity).supportFragmentManager.beginTransaction().add(android.R.id.content, fragment).commit()
+//        }
     })
 
 
 }
 
-interface ItemClick {
 
-    fun onTagClicked(position: Int, like: Boolean, data: List<ArticleDto>)
-
-}
 
 

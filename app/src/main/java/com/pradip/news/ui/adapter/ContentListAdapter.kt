@@ -17,7 +17,7 @@ import com.pradip.news.extensions.loadImage
  * [setData] sets the data in an adapter.
  * */
 class ContentListAdapter() : RecyclerView.Adapter<ContentListAdapter.ContentListViewHolder>() {
-    private var articles: List<ArticleDto> = arrayListOf()
+     var articles: List<ArticleDto> = arrayListOf()
 
     init {
         setHasStableIds(true)

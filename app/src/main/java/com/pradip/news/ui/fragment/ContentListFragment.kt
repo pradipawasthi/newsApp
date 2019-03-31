@@ -15,7 +15,6 @@ import com.pradip.news.extensions.observeK
 import com.pradip.news.extensions.viewModel
 import com.pradip.news.ui.adapter.ContentAdapter
 import com.pradip.news.ui.adapter.ContentListAdapter
-import com.pradip.news.ui.adapter.ItemClick
 import com.pradip.news.viewmodel.ContentListViewModel
 
 
@@ -27,10 +26,7 @@ import com.pradip.news.viewmodel.ContentListViewModel
  * It fetches data from [ContentListViewModel]
  * and shows it in a recyclerView using [ContentListAdapter].
  */
-class ContentListFragment : Fragment(), ItemClick {
-    override fun onTagClicked(position: Int, like: Boolean, data: List<ArticleDto>) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
+class ContentListFragment : Fragment() {
 
     private val viewModel: ContentListViewModel by viewModel() // lazy initialization
     private val adapter = ContentAdapter()
