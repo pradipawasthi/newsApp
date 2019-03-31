@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+        <import type="java.util.List" />
+
+        <variable
+            name="article"
+            type="java.util.List&lt;com.dfl.newsapi.model.ArticleDto&gt;" />
+
+        <variable
+            name="sourceName"
+            type="String" />
+
+
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtIndex"
+            android:layout_alignParentLeft="true"
+            android:padding="15dp"
+            tools:text="BBC News"
+            android:textStyle="bold"
+            android:textColor="@color/app_red_dark"
+            android:textSize="20sp"
+            android:text="@{sourceName}"
+            />
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rvSource"
+            android:padding="10dp"
+            app:articleData="@{article}"
+           />
+
+    </LinearLayout>
+
+</layout>

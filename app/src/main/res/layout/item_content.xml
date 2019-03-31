@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/background">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/imageCard"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_margin="24dp"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ivImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_doctor_strange"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:ellipsize="end"
+        android:fontFamily="sans-serif-medium"
+        android:lineSpacingExtra="2dp"
+        android:maxLines="3"
+        android:textColor="@color/app_black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@id/tvAuthor"
+        app:layout_constraintEnd_toStartOf="@id/imageCard"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@tools:sample/lorem" />
+
+    <TextView
+        android:id="@+id/tvAuthor"
+        android:layout_width="0dp"
+        android:layout_height="14dp"
+        android:fontFamily="sans-serif-medium"
+        android:lineSpacingExtra="2dp"
+        android:textColor="@color/colorPrimary"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/imageCard"
+        app:layout_constraintEnd_toStartOf="@id/ivlike"
+        app:layout_constraintStart_toStartOf="@id/tvTitle"
+        tools:text="@tools:sample/lorem" />
+
+    <ImageView
+        android:id="@+id/ivlike"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_like"
+        style="@style/Like.Button"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/imageCard"
+        app:layout_constraintStart_toEndOf="@+id/tvAuthor"
+        app:layout_constraintEnd_toStartOf="@id/imageCard"
+     />
+
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:layout_marginTop="24dp"
+        android:background="@color/backgroundLight"
+        app:layout_constraintTop_toBottomOf="@id/imageCard" />
+</androidx.constraintlayout.widget.ConstraintLayout>
